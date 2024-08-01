@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parties</title>
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Lobster|Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Black+Han+Sans|Lobster" rel="stylesheet">
+    <style>
+        /* Provided CSS */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #ff9933;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #000086;
+        }
+
+        main {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(80vh - 80px);
+        }
+
+        .party-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .party {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            padding: 10px;
+            background-color: #f9f9f9;
+            flex: 1 1 300px;
+            max-width: 300px;
+            box-sizing: border-box;
+        }
+
+        .party img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .party h2 {
+            margin: 10px 0;
+        }
+
+        .party a {
+            text-decoration: none;
+            color: #000086;
+        }
+
+        .party a:hover {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        footer {
+            background-color: #009900;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer address {
+            margin: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .pieChart{
+            display:block; 
+            height: 600px; 
+            width: 600px; 
+            left: 50%;
+            top: 50%;
+            margin-left: 500px; 
+            margin-top: 100px; 
+        }
+
+        canvas {
+            position: relative;
+            display: block;
+            width: 600px;
+            height: 600px;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cand.html">Parties</a>
+            <a href="vote.html">Vote</a>
+            <a href="curr1.html">Results</a>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <h1>
+                <a href="https://en.wikipedia.org/wiki/Fruit" align-text="center" target="_blank" style="text-decoration: none; color: inherit;">Fruit Parties of India</a>
+                <h1 style="text-align: center;">Please note that this is just sample data and not real, used only for educational purposes</p>
+                </h1>
+            <div class="party-grid">
+                <div class="party">
+                    <img src="img/bjp.jpg" alt="pomegranate">
+                    <h2><a href="https://en.wikipedia.org/wiki/Pomegranate">POMOGRANATE</a></h2>
+                </div>
+                <div class="party">
+                    <img src="img/inc.jpg" alt="ORANGE">
+                    <h2><a href="https://en.wikipedia.org/wiki/Orange_(fruit)">ORANGE</a></h2>
+                </div>
+                <div class="party">
+                    <img src="img/cpim.jpg" alt="STRAWBERRY">
+                    <h2><a href="https://en.wikipedia.org/wiki/Strawberry">STRAWBERRY</a></h2>
+                </div>
+                <div class="party">
+                    <img src="img/aap.jpg" alt="Aam Aadmi Party (AAP)">
+                    <h2><a href="https://en.wikipedia.org/wiki/Avocado">AVOCADO</a></h2>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <address>
+            <p>Election Commission of India, Nirvachan Sadan, Ashoka Road, New Delhi - 110001</p>
+            <p>Contact: +91-11-23052123</p>
+            <p>Follow us: 
+                <a href="https://twitter.com/eci_electoral">Twitter</a> |
+                <a href="https://www.facebook.com/eci.india">Facebook</a>
+            </p>
+        </address>
+    </footer>
+
+</body>
+</html>

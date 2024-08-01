@@ -1,0 +1,190 @@
+
+/* Ensure that html and body take up the full height */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Body styling: Flexbox layout for vertical stacking */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+}
+
+/* Header styling: Centered navigation with saffron background */
+header {
+    background-color: #ff9933; /* Saffron color */
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* Center-align children horizontally */
+    align-items: center; /* Center-align children vertically */
+}
+
+nav {
+    display: flex; /* Enable flexbox for navigation */
+}
+
+nav a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #000086; /* Dark blue on hover */
+}
+
+/* Main content styling: Centered form and flexible space */
+main {
+    flex: 1; /* Fills available space and pushes footer down */
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(80vh - 80px); /* Adjust to account for header and footer heights */
+}
+
+/* Form styling: Compact and centered */
+form {
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Arrange form elements in a column */
+    gap: 15px; /* Space between form elements */
+    padding: 10px;
+    border: 1px solid #ddd; /* Border around the form */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Space between label and input */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px; /* Font size for labels */
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px; /* Font size for inputs/select */
+    border: 1px solid #ddd; /* Border around inputs/select */
+    border-radius: 4px; /* Rounded corners */
+}
+
+button {
+    background-color: #007bff; /* Blue background color */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 16px; /* Font size for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 4px; /* Rounded corners */
+    align-self: center; /* Center-align the button horizontally */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Party grid styling: Responsive and flexible layout */
+.party-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+    gap: 20px; /* Space between items */
+}
+
+.party {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    flex: 1 1 300px; /* Flex grow, shrink, basis */
+    max-width: 300px; /* Limit the width */
+    box-sizing: border-box;
+}
+
+.party img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.party h2 {
+    margin: 10px 0;
+}
+
+.party a {
+    text-decoration: none;
+    color: #000086; /* Dark blue for links */
+}
+
+.party a:hover {
+    animation: pulse 1s infinite; /* Add a pulsing effect */
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Footer styling: Centered text and green background */
+footer {
+    background-color: #009900; /* Green color */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+footer address {
+    margin: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.pieChart{
+	
+    display:block; 
+    height: 600 px; 
+    width: 600px; 
+    left: 50%;
+	top: 50%;
+	margin-left: 500px; /* This is half the width */
+	margin-top: 100px; /* This is half the height */
+
+}
+
+canvas{
+    position: relative;
+    display: block;
+    width: 600px;
+	height: 600px;
+	margin: 0px;
+}

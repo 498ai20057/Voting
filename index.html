@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHARAT ONLINE VOTING</title>
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Lobster|Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Black+Han+Sans|Lobster" rel="stylesheet">
+    <style>
+        /* Provided CSS */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #ff9933;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #000086;
+        }
+
+        main {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(80vh - 80px);
+        }
+
+        footer {
+            background-color: #009900;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer address {
+            margin: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .centered-text {
+            text-align: center;
+            margin: 40px;
+        }
+
+        .party-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .party {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            padding: 10px;
+            background-color: #f9f9f9;
+            flex: 1 1 300px;
+            max-width: 300px;
+            box-sizing: border-box;
+        }
+
+        .party img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .party h2 {
+            margin: 10px 0;
+        }
+
+        .party a {
+            text-decoration: none;
+            color: #000086;
+        }
+
+        .party a:hover {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .pieChart {
+            display: block;
+            height: 600px;
+            width: 600px;
+            left: 50%;
+            top: 50%;
+            margin-left: 500px;
+            margin-top: 100px;
+        }
+
+        canvas {
+            position: relative;
+            display: block;
+            width: 600px;
+            height: 600px;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body ng-app="header" ng-controller="head">
+
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cand.html">Parties</a>
+            <a href="vote.html">Vote</a>
+            <a href="curr1.html">Results</a>
+        </nav>
+    </header>
+
+    <main>
+        <div style="text-align: center; width: 100%; padding: 10px;">
+            <img src="img/election_commission.jpg" alt="Election Commission of India" style="width: 80%; height: auto; max-width: 1430px;">
+            <h1><a href="https://en.wikipedia.org/wiki/Election_Commission_of_India" target="_blank" style="text-decoration: none; color: inherit;">"Election Commission of India"</a></h1>
+            <p style="width: 80%; max-width: 1100px; margin: 0 auto;">The Election Commission of India is an autonomous constitutional authority established on 25th January 1950 and headquartered in New Delhi. It is tasked with administering election processes across India at both national and state levels, including the Lok Sabha and Rajya Sabha elections, as well as the elections for State Legislative Assemblies and Legislative Councils. Additionally, the Commission is responsible for the registration and regulation of political parties in India, ensuring the integrity and smooth functioning of the democratic process.</p>
+        </div>
+    </main>
+
+    <footer>
+        <address>
+            <p>Election Commission of India, Nirvachan Sadan, Ashoka Road, New Delhi - 110001</p>
+            <p>Contact: +91-11-23052123</p>
+            <p>Follow us: 
+                <a href="https://twitter.com/eci_electoral" target="_blank">Twitter</a> |
+                <a href="https://www.facebook.com/eci.india" target="_blank">Facebook</a>
+            </p>
+        </address>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script>
+        var app = angular.module("header", ["ngRoute"]);
+        app.controller("head", function($scope) {
+            $scope.head = "BHARAT LOK SABHA ELECTION";
+            $scope.image1 = "1.jpg";
+        });
+        app.config(function($routeProvider) {
+            $routeProvider
+            .when("/", {
+                templateUrl: "home.html"
+            })
+            .when("/cand", {
+                templateUrl: "cand.html"
+            })
+            .when("/vote", {
+                templateUrl: "vote.html"
+            })
+            .when("/curr", {
+                templateUrl: "curr.php"
+            });
+        });
+    </script>
+
+</body>
+</html>

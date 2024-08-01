@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Lobster|Pacifico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Black+Han+Sans|Lobster">
+    <style>
+        /* Provided CSS */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #ff9933;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #000086;
+        }
+
+        main {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(80vh - 80px);
+        }
+
+        form {
+            max-width: 500px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            align-self: center;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #009900;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer address {
+            margin: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .pieChart {
+            display: block;
+            height: 600px;
+            width: 600px;
+            left: 50%;
+            top: 50%;
+            margin-left: 500px;
+            margin-top: 100px;
+        }
+
+        canvas {
+            position: relative;
+            display: block;
+            width: 600px;
+            height: 600px;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="1page.html">Home</a>
+            <a href="cand.html">Parties</a>
+            <a href="vote.html">Vote</a>
+            <a href="curr1.html">Results</a>
+        </nav>
+    </header>
+    <h1 style="text-align: center;">Vote for Your Preferred Party</h1>
+    <main>
+        <form id="voteForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="adhar">Adhar Number:</label>
+                <input type="text" id="adhar" name="adhar" required>
+            </div>
+            <div class="form-group">
+              <label for="eid">Election ID :</label>
+              <input type="text" id="eid" name="eid" required>
+          </div>
+            <div class="form-group">
+                <label for="party">Select Party:</label>
+                <select id="party" name="party" required>
+                    <option value="P">POMOGRANATE</option>
+                    <option value="0">ORANGE</option>
+                    <option value="S">STRAWBERRY</option>
+                    <option value="A">AVOCADO</option>
+                </select>
+            </div>
+            <button type="submit">Vote</button>
+        </form>
+    </main>
+    <footer>
+        <address>
+            <p>Election Commission of India, Nirvachan Sadan, Ashoka Road, New Delhi - 110001</p>
+            <p>Contact: +91-11-23052123</p>
+            <p>Follow us: 
+                <a href="https://twitter.com/eci_electoral" target="_blank">Twitter</a> |
+                <a href="https://www.facebook.com/eci.india" target="_blank">Facebook</a>
+            </p>
+        </address>
+    </footer>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

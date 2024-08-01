@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="curr.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+       body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+#authSection {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Fixed width for rectangle */
+    height: 300px; /* Fixed height for rectangle */
+    box-sizing: border-box; /* Includes padding and border in the width and height */
+}
+
+#authSection h2 {
+    margin: 0 0 20px; /* Adjusted margin to prevent extra spacing on the sides */
+}
+
+#authSection form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%; /* Full height for the form */
+    justify-content: center; /* Center the form items vertically */
+}
+
+#authSection label, #authSection input, #authSection button {
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px; /* Maintain max width for inputs and buttons */
+}
+
+#authSection input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#authSection button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#authSection button:hover {
+    background-color: #0056b3;
+}
+
+.hidden { display: none; }
+
+    </style>
+</head>
+<body>
+    <div id="authSection">
+        <h2>Admin Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Login</button>
+            <p id="error" style="color: red;"></p>
+        </form>
+    </div>
+
+    <div id="content" class="hidden">
+        <header>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="cand.html">Parties</a>
+                <a href="vote.html">Vote</a>
+                <a href="curr1.html">Results</a>
+            </nav>
+        </header>
+        <h1 style="text-align: center;">Election Results</h1>
+        <h1 style="text-align: center;">Please note that this is just sample data and not real, used only for educational purposes</h1>
+        <main>
+            <canvas id="barChart" width="200" height="200"></canvas>
+            <script>
+                var canvas = document.getElementById("barChart");
+                var ctx = canvas.getContext('2d');
+
+                // Global Options
+                Chart.defaults.color = 'black';
+                Chart.defaults.font.size = 16;
+
+                var data = {
+                    labels: ["P", "O", "A", "S"],
+                    datasets: [
+                        {
+                            label: 'Vote Count',
+                            data: [90, 5, 20, 15], // Adjust the vote count for AAP and CPIM
+                            backgroundColor: [
+                                'orange',
+                                'red',
+                                'blue',
+                                'green'
+                            ],
+                            borderColor: [
+                                'black',
+                                'black',
+                                'black',
+                                'black'
+                            ],
+                            borderWidth: 2
+                        }
+                    ]
+                };
+
+                var options = {
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        }
+                    }
+                };
+
+                // Chart declaration
+                var myBarChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: data,
+                    options: options
+                });
+            </script>
+        </main>
+        <footer>
+            <address>
+                <p>Election Commission of India, Nirvachan Sadan, Ashoka Road, New Delhi - 110001</p>
+                <p>Contact: +91-11-23052123</p>
+                <p>Follow us: 
+                    <a href="https://twitter.com/eci_electoral">Twitter</a> |
+                    <a href="https://www.facebook.com/eci.india">Facebook</a>
+                </p>
+            </address>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting the default way
+
+            // Correct admin credentials
+            var correctUsername = 'admin';
+            var correctPassword = 'iprl';
+
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (username === correctUsername && password === correctPassword) {
+                document.getElementById('authSection').classList.add('hidden');
+                document.getElementById('content').classList.remove('hidden');
+            } else {
+                document.getElementById('error').innerText = 'Incorrect username or password.';
+            }
+        });
+    </script>
+</body>
+</html>
